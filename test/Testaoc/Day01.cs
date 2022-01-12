@@ -2,7 +2,7 @@ using Xunit;
 
 namespace Testaoc
 {
-    public class Day1
+    public class Day01Test
     {
         private int[] input = new[] {
                 199,
