@@ -34,3 +34,4 @@ public static partial class InputGetter
         return lines;
     }
 }
+}
