@@ -1,6 +1,7 @@
 ﻿using Shared;
+using System;
 
-var input = await InputGetter.ReadInputAsLines<int>(2022, 1);
+var input = await InputGetter.ReadInputAsLinesNullableType<int>(2022, 1);
 
 var result1 = Day01.Part1.Solution(input);
 

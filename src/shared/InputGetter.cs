@@ -28,10 +28,38 @@ public static partial class InputGetter
             new[] { "\r\n", "\r", "\n" },
             StringSplitOptions.None);
 
+
+
         var lines = inputLines.Take(inputLines.Count() - 1)
-            .Select(l => (T)Convert.ChangeType(l, typeof(T)));
+            .Select(l =>
+            (T)Convert.ChangeType(l, typeof(T)));
 
         return lines;
     }
-}
+
+    public static async Task<List<T?>> ReadInputAsLinesNullableType<T>(int year, int day) where T : struct
+    {
+        var input = await httpClient.GetAsync($"http://adventofcode.com/{year}/day/{day}/input");
+        var inputBody = await input.Content.ReadAsStringAsync();
+        var inputLines = inputBody.Split(
+            new[] { "\r\n", "\r", "\n" },
+            StringSplitOptions.None);
+
+
+
+        var lines = inputLines.Take(inputLines.Count() - 1)
+            .Select(l =>
+            {
+                try
+                {
+                    return (T?)Convert.ChangeType(l, typeof(T));
+                }
+                catch
+                {
+                    return default;
+                }
+            });
+
+        return lines.ToList();
+    }
 }

@@ -2,5 +2,5 @@
 
 public static partial class InputGetter
 {
-    private static readonly string session = "session=53616c7465645f5f74f8625f1ebdcc111d5b086c67731023130ff72bc9d1c0d57cddcc249b7c2f1e9fb418f55850b5ca";
+    private static readonly string session = "session=53616c7465645f5fb844d1e8e5d9d1f876a147f537f1e1796e0c2bee5bc610d97a17dd664e7f0b2aa8c4a4615345fa2c9ddf04c46d0949e9c67e0ca7c1eafeb9";
 }
